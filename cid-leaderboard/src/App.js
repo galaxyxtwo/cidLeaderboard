@@ -51,7 +51,7 @@ function App() {
             [...data.items].sort((a, b) => b.numbersAccessed - a.numbersAccessed)
             .map((item, index) => (
               <li key={index}>
-                {item.cid} - Number Accessed: {item.numbersAccessed}
+                {item.cid} - {item.numbersAccessed}
               </li>
             ))
           }
