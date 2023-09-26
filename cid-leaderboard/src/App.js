@@ -45,7 +45,7 @@ function App() {
 
   return (
       <div className="App">
-        <h1>CID leaderboard</h1>
+        <h1>Popular CIDs</h1>
         <ul>
           {
             [...data.items].sort((a, b) => b.numbersAccessed - a.numbersAccessed)
