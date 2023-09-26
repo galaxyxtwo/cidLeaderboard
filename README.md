@@ -14,7 +14,7 @@ Follow the steps below to set up and run the cid-leaderboard React App in develo
 1. **Clone the Repository**:
   
     ```
-    git clone [https://github.com/leto-gg/ProdWebsite]
+    git clone [https://github.com/galaxyxtwo/cidLeaderboard]
     cd [cid-leaderboard]
     ```
 
