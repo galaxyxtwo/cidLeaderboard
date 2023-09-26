@@ -1,5 +1,5 @@
 # cidLeaderboard
-Display a leaderboard of CIDs in descending order based on view count (numberAccessed).
+Display a leaderboard of IPFS CIDs in descending order based on view count (numberAccessed).
 
 
 <img width="656" alt="Screenshot 2023-09-26 at 8 36 22 AM" src="https://github.com/galaxyxtwo/cidLeaderboard/assets/90220293/eff91783-6d2d-4e22-9b97-241e166adf26">
