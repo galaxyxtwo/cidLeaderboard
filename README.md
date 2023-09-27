@@ -5,10 +5,10 @@ A leaderboard to display IPFS CIDs based on view count (in descending order). Ea
 
 CidLeaderboard uses the [Leto Analytics API](https://letodev.gitbook.io/getting-started/documentation/analytics-rest-api) to display the view count for each CID. 
 
-> **_Note_**: Only IPFS CIDs that have been accessed through the [Leto IPFS Gateway](https://letodev.gitbook.io/getting-started/documentation/ipfs-gateway-api) will return a view count, called "numberAccessed. 
+> **_Note_**: Only IPFS CIDs that have been accessed through the [Leto IPFS Gateway](https://letodev.gitbook.io/getting-started/documentation/ipfs-gateway-api) will return a view count, called "numberAccessed.
 
 
-<img width="656" alt="Screenshot 2023-09-26 at 8 36 22 AM" src="https://github.com/galaxyxtwo/cidLeaderboard/assets/90220293/eff91783-6d2d-4e22-9b97-241e166adf26">
+<img width="1167" alt="Screenshot 2023-09-27 at 5 05 56 PM" src="https://github.com/galaxyxtwo/cidLeaderboard/assets/90220293/3cd122c3-b18b-4bdb-9d3c-b64d5cfad95d">
 
 
 ## Getting Started
