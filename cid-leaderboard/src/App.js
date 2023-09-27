@@ -63,7 +63,7 @@ function App() {
     [...data.items].sort((a, b) => b.numbersAccessed - a.numbersAccessed)
     .map((item, index) => (
       <tr key={index}>
-        <td>
+        <td className="cid-column">
           <a href={`https://leto.gg/ipfs/${item.cid}`} target="_blank" rel="noopener noreferrer">
             {item.cid}
           </a>

@@ -64,15 +64,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Styles for the table */
-
-.leaderboard-table th, .leaderboard-table td {
-  border: 1px solid #ddd;
-  text-align: center; /* This centers the text horizontally */
-  padding: 8px;
-  background-color: #181a1b;
-}
-
 .leaderboard-table {
   width: 100%;
   border-collapse: collapse;
@@ -92,12 +83,21 @@ h1 {
   padding: 8px 12px;
 }
 
+.leaderboard-table th {
+  background-color: #181a1b;
+  text-align: left;
+}
+
 .leaderboard-table tbody tr:nth-child(odd) {
   background-color: #313030;
 }
 
 .leaderboard-table tbody tr:hover {
   background-color: #333536;
+}
+
+.leaderboard-table .cid-column {
+  text-align: left;
 }
 
 span:hover {
@@ -123,6 +123,8 @@ h2 {
   margin-bottom: 2.5rem;       /* Space between the  subheading and table */
   text-align: center;        /* Center align if desired */
 }
+
+
 
 
 
