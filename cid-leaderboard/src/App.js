@@ -54,7 +54,7 @@ function App() {
       <table className="leaderboard-table">
         <thead>
           <tr>
-            <th>CID</th>
+            <th>Website CID</th>
             <th>Views this week</th>
           </tr>
         </thead>
