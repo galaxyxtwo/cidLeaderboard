@@ -44,24 +44,40 @@ function App() {
   }, []); // Empty dependency array means useEffect will only run once, similar to componentDidMount
 
   return (
-      <div className="App">
-        <h1>Popular CIDs</h1>
-        <ul>
-          {
-            [...data.items].sort((a, b) => b.numbersAccessed - a.numbersAccessed)
-            .map((item, index) => (
-              <li key={index}>
-                {item.cid} - {item.numbersAccessed}
-              </li>
-            ))
-          }
-        </ul>
-        {data.error && <p>Error: {data.error.message}</p>}
-      </div>
-    );
-  
+    <div className="App">
+    <nav className="App-navbar">
+        {/* You can add navbar content here, e.g., links, logo, etc. */}
+        <span>Most popular <a href="https://www.openlinks.io" target="_blank" rel="noopener noreferrer">Openlinks.io</a> websites this week</span>
+    </nav>
+      <h1>Leaderboard</h1>
+      <h2>Week of September/25</h2>
+      <table className="leaderboard-table">
+        <thead>
+          <tr>
+            <th>CID</th>
+            <th>Views this week</th>
+          </tr>
+        </thead>
+<tbody>
+  {
+    [...data.items].sort((a, b) => b.numbersAccessed - a.numbersAccessed)
+    .map((item, index) => (
+      <tr key={index}>
+        <td>
+          <a href={`https://leto.gg/ipfs/${item.cid}`} target="_blank" rel="noopener noreferrer">
+            {item.cid}
+          </a>
+        </td>
+        <td>{item.numbersAccessed}</td>
+      </tr>
+    ))
+  }
+</tbody>
 
-
+      </table>
+      {data.error && <p>Error: {data.error.message}</p>}
+    </div>
+  );
 }
 
 export default App;
