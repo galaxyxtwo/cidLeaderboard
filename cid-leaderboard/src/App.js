@@ -47,15 +47,15 @@ function App() {
     <div className="App">
     <nav className="App-navbar">
         {/* You can add navbar content here, e.g., links, logo, etc. */}
-        <span>Most popular <a href="https://www.openlinks.io" target="_blank" rel="noopener noreferrer">Openlinks.io</a> websites this week</span>
+        <span>This leaderboard shows the most popular <a href="https://www.openlinks.io" target="_blank" rel="noopener noreferrer">Openlinks.io</a> websites</span>
     </nav>
       <h1>Leaderboard</h1>
-      <h2>Week of September/25</h2>
+      <h2>Private activity data for websites on IPFS!</h2>
       <table className="leaderboard-table">
         <thead>
           <tr>
             <th>Website CID</th>
-            <th>Views this week</th>
+            <th>Total Views</th>
           </tr>
         </thead>
 <tbody>
