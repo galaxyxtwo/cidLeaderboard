@@ -8,7 +8,8 @@ CidLeaderboard uses the [Leto Analytics API](https://letodev.gitbook.io/getting-
 > **_Note_**: Only IPFS CIDs that have been accessed through the [Leto IPFS Gateway](https://letodev.gitbook.io/getting-started/documentation/ipfs-gateway-api) will return a view count, called "numberAccessed.
 
 
-<img width="1052" alt="Screenshot 2023-09-28 at 12 31 23 AM" src="https://github.com/galaxyxtwo/cidLeaderboard/assets/90220293/24e6adc2-7df1-4e60-9a06-20c2af9563dd">
+
+<img width="1135" alt="Screenshot 2023-09-29 at 12 06 18 PM" src="https://github.com/galaxyxtwo/cidLeaderboard/assets/90220293/7416c1ef-c7f0-4ea7-92d7-1856fa71eb27">
 
 
 
