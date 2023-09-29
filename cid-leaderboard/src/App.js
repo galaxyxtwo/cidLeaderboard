@@ -14,7 +14,7 @@ function App() {
           },
           body: JSON.stringify({
             cids: [
-              'bafkreiedazv25tc7idkywbco3jxrywdnb3g4ff3pqegrmshhtcpk5zgsyi',
+              'QmYipSwcyLsv9FYndT1aUrA5FpBFAA2zYGstq1enjPLTyj',
               'bafkreibm6ku4kcsbzlby3c6st57cyk2t5vztgvntwxkp56xtqdxqq5oqhi',
               'bafkreicml3xokhxca4h3qvxas42u54ynqtjpkpbyodjjh2sr2xg7g6nkgq'
               
@@ -47,14 +47,14 @@ function App() {
     <div className="App">
     <nav className="App-navbar">
         {/* You can add navbar content here, e.g., links, logo, etc. */}
-        <span>This leaderboard shows the most popular <a href="https://www.openlinks.io" target="_blank" rel="noopener noreferrer">Openlinks.io</a> websites</span>
+        <span>The most popular NFTs on my social app</span>
     </nav>
       <h1>Leaderboard</h1>
-      <h2>Private activity data for websites on IPFS!</h2>
+      <h2>Private activity data for NFTs on IPFS!</h2>
       <table className="leaderboard-table">
         <thead>
           <tr>
-            <th>Website CID</th>
+            <th>NFT CID</th>
             <th>Total Views</th>
           </tr>
         </thead>
