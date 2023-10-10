@@ -1,84 +1,70 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import './App.css'
+import { useState } from 'react'
+import { useLiveQuery, useDocument } from 'use-fireproof'
 
 function App() {
-  const [data, setData] = useState({ items: [], error: null });
+  const [inputCID, setInputCID] = useState('')
+  const leaderboardData = useLiveQuery('leaderboard')
+  const leaderboard = leaderboardData.docs
+  const [leaderboardEntry, setLeaderboardEntry, saveLeaderboardEntry] = useDocument({
+    cid: '',
+    lastAccessed: '',
+    numberAccessed: 0,
+  })
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/analytics', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            cids: [
-              'QmYipSwcyLsv9FYndT1aUrA5FpBFAA2zYGstq1enjPLTyj',
-              'bafkreibm6ku4kcsbzlby3c6st57cyk2t5vztgvntwxkp56xtqdxqq5oqhi',
-              'bafkreicml3xokhxca4h3qvxas42u54ynqtjpkpbyodjjh2sr2xg7g6nkgq'
-              
-            ],
-            page: 1,
-            size: 5
-          })
-        });
+  const handleAddCID = async () => {
+    // Call the provided API with the input CID
+    const response = await fetch('https://api.leto.gg/analytics', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        cids: [inputCID],
+      }),
+    })
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+    const data = await response.json()
 
-        const fetchedData = await response.json();
-        if (fetchedData.success && fetchedData.data && Array.isArray(fetchedData.data.data)) {
-            setData({ items: fetchedData.data.data, error: null });
-        } else {
-            throw new Error("Invalid data format from the server.");
-        }
-        
-      } catch (error) {
-        console.error("There was a problem with the fetch operation:", error);
-      }
-    };
+    // Save the data to Fireproof
+    setLeaderboardEntry(data[0])  // Assuming the API returns an array
+    saveLeaderboardEntry()
+  }
 
-    fetchData();
-  }, []); // Empty dependency array means useEffect will only run once, similar to componentDidMount
+  const handleInputChange = (event) => {
+    setInputCID(event.target.value)
+  }
 
   return (
     <div className="App">
-    <nav className="App-navbar">
-        {/* You can add navbar content here, e.g., links, logo, etc. */}
-        <span>The most popular NFTs on my social app</span>
-    </nav>
-      <h1>Leaderboard</h1>
-      <h2>Private activity data for NFTs on IPFS!</h2>
-      <table className="leaderboard-table">
-        <thead>
-          <tr>
-            <th>NFT CID</th>
-            <th>Total Views</th>
-          </tr>
-        </thead>
-<tbody>
-  {
-    [...data.items].sort((a, b) => b.numbersAccessed - a.numbersAccessed)
-    .map((item, index) => (
-      <tr key={index}>
-        <td className="cid-column">
-          <a href={`https://leto.gg/ipfs/${item.cid}`} target="_blank" rel="noopener noreferrer">
-            {item.cid}
-          </a>
-        </td>
-        <td>{item.numbersAccessed}</td>
-      </tr>
-    ))
-  }
-</tbody>
+      <div className="container">
+        <h2>Leaderboard</h2>
+        <ul>
+          {leaderboard.map(entry => (
+            <li key={entry.cid}>
+              CID: {entry.cid}
+              <br />
+              Last Accessed: {entry.lastAccessed}
+              <br />
+              Number Accessed: {entry.numberAccessed}
+            </li>
+          ))}
+        </ul>
+      </div>
 
-      </table>
-      {data.error && <p>Error: {data.error.message}</p>}
+      <div>
+        <input
+          value={inputCID}
+          onChange={handleInputChange}
+          placeholder="Enter CID"
+        />
+        <button onClick={handleAddCID}>Add to Leaderboard</button>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+
 
