@@ -52,11 +52,11 @@ function App() {
       setCidInput('');
     }
 };
-
+// Add navbar text <span> if needed
   return (
     <div className="App">
       <nav className="App-navbar">
-          <span>My NFT collection</span>
+          <span></span>
       </nav>
       <h1>Leaderboard</h1>
       <h2>The most popular NFTs</h2>
@@ -74,6 +74,7 @@ function App() {
       <table className="leaderboard-table">
         <thead>
           <tr>
+            <th>Image Preview</th> {/* Add this new header */}
             <th>NFT CID</th>
             <th>Total Views</th>
           </tr>
@@ -83,6 +84,13 @@ function App() {
             [...data.items].sort((a, b) => b.numbersAccessed - a.numbersAccessed)
             .map((item, index) => (
               <tr key={index}>
+                <td> {/* New Image Preview cell */}
+                  <img 
+                    src={`https://leto.gg/ipfs/${item.cid}`} 
+                    alt={`NFT Preview for CID ${item.cid}`} 
+                    style={{width: "50px", height: "50px"}} // You can adjust this for the desired preview size
+                  />
+                </td>
                 <td className="cid-column">
                   <a href={`https://leto.gg/ipfs/${item.cid}`} target="_blank" rel="noopener noreferrer">
                     {item.cid}
@@ -100,3 +108,8 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
