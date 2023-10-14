@@ -3,6 +3,8 @@ import './App.css';
 
 function App() {
   const [data, setData] = useState({ items: [], error: null });
+  const [clickedLink, setClickedLink] = useState(null);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +43,7 @@ function App() {
     };
 
     fetchData();
-  }, []); // Empty dependency array means useEffect will only run once, similar to componentDidMount
+  }, []); // Empty dependency array means useEffect will only run once
 
   return (
     <div className="App">
@@ -55,22 +57,49 @@ function App() {
         <thead>
           <tr>
             <th>Content</th>
+            <th>IPFS CID</th>
             <th>Total Views</th>
           </tr>
         </thead>
 <tbody>
   {
     [...data.items].sort((a, b) => b.numbersAccessed - a.numbersAccessed)
-    .map((item, index) => (
-      <tr key={index}>
-        <td className="cid-column">
-          <a href={`https://leto.gg/ipfs/${item.cid}`} target="_blank" rel="noopener noreferrer">
-            {item.cid}
-          </a>
-        </td>
-        <td>{item.numbersAccessed}</td>
-      </tr>
-    ))
+// ...
+
+// Modify the mapping of data to include the third column on the left side
+.map((item, index) => (
+  <tr key={index}>
+    <td>
+      <a
+        href={`https://leto.gg/ipfs/${item.cid}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => setClickedLink(item.cid)}
+      >
+        {clickedLink === item.cid ? (
+          item.isImage ? (
+            <img src={`https://leto.gg/ipfs/${item.cid}`} alt={item.cid} />
+          ) : (
+            `View File (${item.cid})`
+          )
+        ) : (
+          "Click to view"
+        )}
+      </a>
+    </td>
+    <td className="cid-column">
+      <a href={`https://leto.gg/ipfs/${item.cid}`} target="_blank" rel="noopener noreferrer">
+        {item.cid}
+      </a>
+    </td>
+    <td>{item.numbersAccessed}</td>
+  </tr>
+))
+
+// ...
+
+    
+    
   }
 </tbody>
 
