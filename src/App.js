@@ -80,7 +80,7 @@ function App() {
           item.isImage ? (
             <img src={`https://leto.gg/ipfs/${item.cid}`} alt={item.cid} />
           ) : (
-            `View File (${item.cid})`
+            `Click to view`
           )
         ) : (
           "Click to view"
@@ -95,8 +95,6 @@ function App() {
     <td>{item.numbersAccessed}</td>
   </tr>
 ))
-
-// ...
 
     
     
