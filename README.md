@@ -33,20 +33,5 @@ Follow the steps below to set up and run the commuityStats React App in developm
     ```
 
   After executing the above command, the react app should be running in development mode. Navigate to the specified local server address in your browser to view the website.
-
-  ## Hosting on IPFS
-
-  There are many providers that you can use to host this app. To host the app on IPFS, let's use industry provider, Spheron.
-
-  1. Login to Spheron. In the dashboard, choose "Static Website" and select "New Project".
-  <img width="847" alt="Spheron1" src="https://github.com/galaxyxtwo/communityStats/assets/90220293/e1c644a1-93df-4c77-9437-606811dd58a4">
-  
-  2. Connect your Github account and then choose the repo for communityStats. Select "IPFS" as the protocol.
-
-  <img width="1160" alt="spheron2" src="https://github.com/galaxyxtwo/communityStats/assets/90220293/89866d40-e8ef-4be5-a26e-cc6d0e6425d1">
-
-  3. See the configuration settings below to launch the app. Once ready, click "Deploy". Spheron will build the app and launch it on IPFS. If needed, choose a domain for this app and setup through Spheron.
- <img width="762" alt="spheron3" src="https://github.com/galaxyxtwo/communityStats/assets/90220293/493128c5-1682-4f1c-9c79-134e6e12b458">
-
     
   Learn more about Leto by visiting the [Leto docs](https://letodev.gitbook.io/getting-started/)!
