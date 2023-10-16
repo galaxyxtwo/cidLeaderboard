@@ -16,9 +16,10 @@ function App() {
           },
           body: JSON.stringify({
             cids: [
-              'QmYipSwcyLsv9FYndT1aUrA5FpBFAA2zYGstq1enjPLTyj',
               'bafkreibm6ku4kcsbzlby3c6st57cyk2t5vztgvntwxkp56xtqdxqq5oqhi',
-              'bafkreicml3xokhxca4h3qvxas42u54ynqtjpkpbyodjjh2sr2xg7g6nkgq'
+              'bafkreifnleeor5evyiblrfqibr4wrscv2sviztf4g7jel5xnfdft74pqxe', 
+              'bafkreia4fwo76dt6igw7wwc65mfqlwim44hjt4zcxkc27vbcj4ylu75cva',
+              'bafkreibe7fjfh5nzkz56qtqkkntp6aeog64wmcjk3qyjswzwfqc534o5pe', 
               
             ],
             page: 1,
@@ -64,9 +65,7 @@ function App() {
 <tbody>
   {
     [...data.items].sort((a, b) => b.numbersAccessed - a.numbersAccessed)
-// ...
 
-// Modify the mapping of data to include the third column on the left side
 .map((item, index) => (
   <tr key={index}>
     <td>
@@ -96,8 +95,6 @@ function App() {
   </tr>
 ))
 
-    
-    
   }
 </tbody>
 
