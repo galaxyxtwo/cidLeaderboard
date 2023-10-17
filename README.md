@@ -1,9 +1,9 @@
 # communityStats
 
 ## Overview
-CommunityStats is a simple tool to share IPFS analytics stats from [Leto](https://leto.gg/) with your community. Easily showcase activity data for NFTs, webpages, and more with a static, public stats page (in descending order by view count). commuinityStats displays analytics from systems using [Leto Analytics](https://leto.gg/). 
+communityStats is a tool to share IPFS analytics from [Leto](https://leto.gg/) with your community. Easily showcase activity data for NFTs, webpages, and more with a static, public stats page (in descending order by view count) from [Leto Analytics](https://leto.gg/). 
 
-Feel free to spice up this app with your own custom design and branding!
+Feel free to use this repo to make your own community stats page!
 
 <img width="1281" alt="Screenshot 2023-10-16 at 12 25 50 PM" src="https://github.com/galaxyxtwo/communityStats/assets/90220293/56b26e1d-c191-4416-b691-68f8c8e76d02">
 
@@ -28,6 +28,8 @@ Follow the steps below to set up and run the commuityStats React App in developm
     ```
 
   After executing the above command, the react app should be running in development mode. Navigate to the specified local server address in your browser to view the website.
+
+To run this application in the cloud, choose a hosting provider and then use a cloudflare worker for the api request. Check out the /worker code in this [other example](https://github.com/galaxyxtwo/viewIpfsAnalytics). /worker is Javascript code meant for a Cloudflare worker that processes api requests. /src is the front-end built with React.
 
 ## Background
 
