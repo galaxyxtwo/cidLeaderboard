@@ -1,7 +1,7 @@
 # communityStats
 
 ## Overview
-communityStats is a tool to share IPFS analytics from [Leto](https://leto.gg/) with your community. Easily showcase activity data for NFTs, webpages, and more with a static, public stats page (in descending order by view count) from [Leto Analytics](https://leto.gg/). 
+Share important analytics you collect using [Leto Analytics](https://leto.gg/) with your community! Easily showcase activity data for NFTs, webpages, and more with a static, public stats page (in descending order by view count).
 
 Feel free to use this repo to make your own community stats page!
 
